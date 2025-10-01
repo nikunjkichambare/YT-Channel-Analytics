@@ -19,7 +19,7 @@ from src.services.videos import fetch_channel_df
 
 # 3) UI
 st.set_page_config(page_title="YouTube Channel Video Analytics", layout="wide")
-st.title("YouTube Channel Videos")
+st.title("YouTube Channel Video Analytics")
 
 default_handle = "@CoComelon"
 handle = st.text_input("Enter channel handle (e.g., @CoComelon):", value=default_handle)
