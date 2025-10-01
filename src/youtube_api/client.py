@@ -2,9 +2,9 @@ import requests
 from typing import Dict, List, Tuple
 from src.config.settings import settings
 
-def _get(path: str, params: Dict) -> Dict:
-    url = f"{settings.base_url}/{path}"
-    r = requests.get(url, params=params, timeout=settings.timeout_s)
+def _get(path: str, params: dict):
+    p = {"key": settings.yt_api_key, **params}
+    r = requests.get(f"{settings.base_url}/{path}", params=p, timeout=settings.timeout_s)
     r.raise_for_status()
     return r.json()
 
